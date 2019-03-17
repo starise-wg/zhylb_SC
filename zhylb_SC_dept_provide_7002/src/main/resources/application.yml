@@ -1,0 +1,39 @@
+server: 
+ port: 7002
+
+mybatis: 
+  config-location: classpath:mybatis/mybatis.cfg.xml 
+  type-aliases-package: com.supermap.vo 
+  mapper-locations: 
+  - classpath:mybatis/mapper/**/*.xml 
+
+spring: 
+  application: 
+   name: supermap-dept
+  datasource: 
+   type: com.alibaba.druid.pool.DruidDataSource
+   driver-class-name: org.gjt.mm.mysql.Driver
+   url: jdbc:mysql://localhost:3306/cloudDB01
+   username: root
+   password: 123456
+   dbcp2:
+    min-idle: 5
+    initial-size: 5
+    max-total: 5
+    max-wait-millis: 200
+
+eureka:
+  client:   #客户端注册进eureka服务列表内
+    service-url:
+     defaultZone: http://localhost:7001/eureka/
+     #defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/ #,http://eureka7003.com:7003/eureka/
+  instance: 
+    instance-id: super-dept:7002
+    prefer-ip-address: true
+
+info: 
+  app.name: zhylb_dept_provide
+  company.name: www.baidu.com
+  build.artifactId: $project.artifactId$
+  build.version: ￥project.version$
+
