@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- 
+		mybatis映射文件，定义操作数据库的sql语句每个sql是一个statement
+		映射文件相关属性解释说明：
+		parameterType(输入类型)、resultType(输出类型)、resultMap（）、rparameterMap（）
+		#{}与${}
+	
+	 -->
+<mapper namespace="com.supermap.provider.dao.UserDao"><!-- dao所在包名 -->
+	<!-- 
+		若传进来的是单个值，#{传经来的属性值}里面没有要求
+		若传进来的是个实体类，则#{}里要求
+	 -->
+	<select id="findByName" parameterType="string" resultType="com.tedu.cloudnote.entity.User"><!-- 输出类型为实体类名称 -->
+		<!-- 执行sql语句【查询语句】 -->
+		select * from sc_user where user_name=#{name}
+	</select>
+	<!-- <select id="findAll" resultType="Dept">
+		select deptno,dname,db_source from dept;
+	</select>-->
+	<!-- 执行sql语句【插入语句】 -->
+	<!-- <insert id="addDept" parameterType="Dept">
+		INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE());
+	</insert>  -->
+
+</mapper>
+ 
+
