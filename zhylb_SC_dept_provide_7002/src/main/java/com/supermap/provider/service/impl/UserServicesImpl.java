@@ -18,17 +18,26 @@ public class UserServicesImpl implements UserServices {
 	@Resource
 	private UserDao userDao;
 
+	/* (non-Javadoc)
+	 * @see com.supermap.provider.service.UserServices#checkLogin(java.lang.String, java.lang.String)
+	 */
 	@Override
 	public JsonResult<User> checkLogin(String name, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*@Override*/
+	/*public JsonResult<User> checkLogin(String name, String password) {
 		JsonResult<User> jsonResult = new JsonResult<User>();
-		/*检测用户名*/
+		检测用户名
 		User user = userDao.findByName(name);
 		if(user==null) {
 			jsonResult.setStatus(0);
 			jsonResult.setMsg("该用户不存在");
 			return jsonResult;
 		}
-		/*检测密码*/
+		检测密码
 		PasswordUUID uuid = new PasswordUUID();
 		String pwd = uuid.md5(password);
 		if(user.getUserPasssword()!= pwd) {
@@ -40,6 +49,6 @@ public class UserServicesImpl implements UserServices {
 		jsonResult.setMsg("登录成功");
 		jsonResult.setData(user);
 		return jsonResult;
-	}
+	}*/
 	
 }
