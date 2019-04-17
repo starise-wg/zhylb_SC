@@ -19,14 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.supermap.vo.Dept;
 @RestController
 public class DeptController {
-	@Autowired
+	@Autowired 
 	private DiscoveryClient client;
 
 	@RequestMapping(value="/getStr/{str}")
 	public String getStr(@PathVariable("str") String str){
 		return "8001ready" + str;
 	}
+	/*前端请求*/
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)
+	/*返回请求参数  json格式*/
 	public String add(@RequestBody Dept dept){
 		return "Dept-8001ready"+dept.getDeptno();
 	}

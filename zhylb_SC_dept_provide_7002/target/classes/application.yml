@@ -2,7 +2,7 @@ server:
  port: 7002
 
 mybatis: 
-  config-location: classpath:mybatis/mybatis.cfg.xml 
+  config-location: classpath:mybatis/mybatis.cfg.xml # mybatis配置
   type-aliases-package: com.supermap.vo 
   mapper-locations: 
   - classpath:mybatis/mapper/**/*.xml 
@@ -13,9 +13,9 @@ spring:
   datasource: 
    type: com.alibaba.druid.pool.DruidDataSource
    driver-class-name: org.gjt.mm.mysql.Driver
-   url: jdbc:mysql://localhost:3306/cloudDB01
+   url: jdbc:mysql://40.73.71.105:3306/zhylb_sc
    username: root
-   password: 123456
+   password: FTY@zhylb#157
    dbcp2:
     min-idle: 5
     initial-size: 5
